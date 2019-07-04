@@ -1,0 +1,5 @@
+rootProject.name = 'chen'
+include 'chen1'
+include 'chen2'
+include 'base'
+
