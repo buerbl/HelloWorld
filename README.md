@@ -1,3 +1,3 @@
-[现在点击此链接，可实现页间跳转](/MD#Inter-Page)
+[现在点击此链接，可实现页间跳转](/MD/hello.md#Inter-Page)
 ## hello
 
