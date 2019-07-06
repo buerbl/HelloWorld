@@ -21,8 +21,6 @@ dependencies {
     compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.4'
     runtime 'mysql:mysql-connector-java'
     compile("com.baomidou:mybatis-plus-boot-starter:3.1.0")
-    compile 'com.alibaba.boot:dubbo-spring-boot-starter:0.1.0'
-    compile 'com.101tec:zkclient:0.10'
     compile("com.baomidou:mybatis-plus-generator:3.1.1")
     compileOnly 'org.projectlombok:lombok'
     testCompile 'org.springframework.boot:spring-boot-starter-test'

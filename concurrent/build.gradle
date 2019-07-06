@@ -1,8 +1,6 @@
-
 plugins {
     id 'java'
 }
-
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 group 'com.demoMuty'
@@ -14,10 +12,7 @@ repositories {
     maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     mavenCentral()
 }
-
 dependencies {
     compile project(':base')
-    compile 'com.alibaba.boot:dubbo-spring-boot-starter:0.1.0'
-    compile 'com.101tec:zkclient:0.10'
-   
+
 }

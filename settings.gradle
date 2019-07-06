@@ -2,4 +2,7 @@ rootProject.name = 'chen'
 include 'chen1'
 include 'chen2'
 include 'base'
+include 'helloredis'
+include 'helloES'
+include 'concurrent'
 

@@ -10,18 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
  * Date: 2019/7/2 19:48
  * description:
  */
-@RestController
-public class he {
-    @Autowired
-    private DemoService demoService;
-
-    @RequestMapping("/he")
-    public String hello(){
-        return "he";
-    }
-
-    @RequestMapping("/chen")
-    public String hello1(){
-        return demoService.sayHello("chen");
+@RestController("/redisHello")
+public class RedisHello {
+    @RequestMapping("/hello3")
+    public String hello3(){
+        return "hello, springboot";
     }
 }

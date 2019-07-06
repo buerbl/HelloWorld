@@ -10,18 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
  * Date: 2019/7/2 19:48
  * description:
  */
-@RestController
-public class s {
+@RestController("/concurrentHello")
+public class ConcurrentHello {
 
-    @Autowired
-    private DemoService demoService;
+
     @RequestMapping("/hello")
-    public String hello(){
-        return "s";
+    public String hello1(){
+        return "he";
     }
 
-    @RequestMapping("/com")
-    public String helloa(){
-        return demoService.sayHello("wen");
-    }
+
 }
