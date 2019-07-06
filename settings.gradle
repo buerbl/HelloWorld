@@ -5,4 +5,5 @@ include 'base'
 include 'helloredis'
 include 'helloES'
 include 'concurrent'
+include 'helloJava'
 
