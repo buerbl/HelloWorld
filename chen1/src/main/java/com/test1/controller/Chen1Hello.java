@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
  * Date: 2019/7/2 19:48
  * description:
  */
-@RestController("/chen1")
+@RestController
+@RequestMapping("/chen1")
 public class Chen1Hello {
     @Autowired
     private DemoService demoService;

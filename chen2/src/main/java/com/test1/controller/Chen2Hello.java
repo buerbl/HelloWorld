@@ -1,6 +1,7 @@
 package com.test1.controller;
 
 import com.test1.provider.DemoService;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
  * Date: 2019/7/2 19:48
  * description:
  */
-@RestController("/chen2")
+@RestController
+@RequestMapping("/chen2")
 public class Chen2Hello {
 
     @Autowired
@@ -24,4 +26,6 @@ public class Chen2Hello {
     public String helloa(){
         return demoService.sayHello("wen");
     }
+
+
 }
