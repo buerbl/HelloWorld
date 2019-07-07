@@ -1,7 +1,5 @@
-package com.test.booleanjava.util;
+package com.test.base.core.util;
 
-import com.test.booleanjava.util.AppException;
-import com.test.booleanjava.util.Base64;
 import org.apache.commons.io.IOUtils;
 
 import javax.crypto.Mac;

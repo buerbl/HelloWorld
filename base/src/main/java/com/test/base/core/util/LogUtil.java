@@ -1,4 +1,4 @@
-package com.test.booleanjava.util;
+package com.test.base.core.util;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -54,7 +54,7 @@ public class LogUtil {
     private static Properties loadProperties() {
         Properties props = new Properties();
         // log4j.properties
-        URL resoucePath = com.test.booleanjava.util.PropertiesLoader.class.getClassLoader().getResource(
+        URL resoucePath = PropertiesLoader.class.getClassLoader().getResource(
                 "log4j.properties");
         File file = new File(resoucePath.getPath());
         InputStream in = null;

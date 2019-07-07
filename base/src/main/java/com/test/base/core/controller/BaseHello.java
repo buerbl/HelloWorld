@@ -1,4 +1,4 @@
-package com.test.booleanjava.controller;
+package com.test.base.core.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

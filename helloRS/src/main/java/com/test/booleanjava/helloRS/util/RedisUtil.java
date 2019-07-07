@@ -49,4 +49,15 @@ public class RedisUtil {
         return jedis.setex(key, seconds, value);
     }
 
+    /**
+     * 如果不存在就执行操作，用作简单分布式锁
+     *
+     * @param key
+     * @param value
+     * @return true表示执行，false表示没有执行
+     */
+    public static Boolean setnx(final String key, final String value){
+        return jedis.setnx(key, value) == 1;
+    }
+
 }

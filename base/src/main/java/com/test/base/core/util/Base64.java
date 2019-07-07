@@ -1,4 +1,4 @@
-package com.test.booleanjava.util;
+package com.test.base.core.util;
 
 public class Base64 {
 

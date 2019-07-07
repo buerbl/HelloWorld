@@ -1,6 +1,6 @@
-package com.test.booleanjava.dubbo;
+package com.test.chen1.core.dubbo;
 
-import com.test.booleanjava.provider.DemoService;
+import com.test.base.core.provider.DemoService;
 import org.springframework.stereotype.Service;
 
 /**

@@ -15,7 +15,7 @@
 
     <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
     <dubbo:reference
-            interface="com.test.booleanjava.provider.DemoService"
+            interface="com.test.base.core.provider.DemoService"
             group="hello-world-app"
             version="1.0.0"
             id="demoService"/>

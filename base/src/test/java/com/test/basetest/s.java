@@ -1,4 +1,4 @@
-package com.test.booleanjava;
+package com.test.basetest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

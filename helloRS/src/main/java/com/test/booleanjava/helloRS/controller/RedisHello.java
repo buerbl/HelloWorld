@@ -5,7 +5,7 @@ import com.test.booleanjava.helloRS.entity.User;
 import com.test.booleanjava.helloRS.util.Redisplus;
 import com.test.booleanjava.helloRS.service.IUserService;
 import com.test.booleanjava.helloRS.util.RedisUtil;
-import com.test.booleanjava.util.LogUtil;
+import com.test.base.core.util.LogUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +25,11 @@ import java.util.Date;
 @RestController
 @RequestMapping("/helloRS/redisHello")
 public class RedisHello {
+    private final static Logger logger = LoggerFactory.getLogger(RedisHello.class);
 
     private final static String USERKEY = "com.test.booleanjava.helloRS.controller.setex";
-    private final static Logger logger = LoggerFactory.getLogger(RedisHello.class);
+    private final static String LOCKKEY = "com.test.booleanjava.helloRS.controller.lock";
+
 
     @Autowired
     private IUserService iUserService;
@@ -84,18 +86,22 @@ public class RedisHello {
         return "hello, del一下redis";
     }
 
+    /**
+     * 做分布锁，
+     *先加锁，写业务，最后解锁
+     * @return
+     */
     @RequestMapping("/lock")
-    public String lock(String key) {
+    public String lock() {
+        //加锁
+        RedisUtil.setnx(LOCKKEY,LOCKKEY);
+        //写业务代码，一人我饮酒醉
+
+        //解锁
+        RedisUtil.del(LOCKKEY);
 
         return "hello, lock一下redis";
     }
 
-    @RequestMapping("/jj")
-    public void jj(){
-        String key = "name";
-        String value ="chenwenguan";
-//        Redisplus.set(key, value);
-        redisplus.set(key, value);
-    }
 
 }

@@ -1,4 +1,4 @@
-package com.test.booleanjava.provider;
+package com.test.base.core.provider;
 
 /**
  * @author buer

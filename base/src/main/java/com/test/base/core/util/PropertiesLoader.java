@@ -1,6 +1,4 @@
-package com.test.booleanjava.util;
-
-import com.test.booleanjava.util.LogUtil;
+package com.test.base.core.util;
 
 import java.io.File;
 import java.io.FileInputStream;

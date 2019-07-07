@@ -1,9 +1,6 @@
 package com.test.booleanjava.helloRS.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -13,11 +10,7 @@ import org.springframework.stereotype.Component;
  * description:
  */
 
-//@Component
-
 //@Configuration
-
-
 
 @Component
 public class Redisplus {
@@ -29,7 +22,6 @@ public class Redisplus {
 //    public RedisTemplate getredisTemplate(){
 //        return redisTemplate = new RedisTemplate();
 //    }
-
 
 
 //    @Bean
