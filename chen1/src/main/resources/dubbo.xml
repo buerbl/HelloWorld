@@ -18,7 +18,7 @@
 
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service
-            interface="com.test1.provider.DemoService"
+            interface="com.test.booleanjava.provider.DemoService"
             ref="demoService"
             group="hello-world-app"
             version="1.0.0"
