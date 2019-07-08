@@ -94,9 +94,10 @@ public class RedisHello {
     @RequestMapping("/lock")
     public String lock() {
         //加锁
-        RedisUtil.setnx(LOCKKEY,LOCKKEY);
-        //写业务代码，一人我饮酒醉
-
+        Boolean rs =  RedisUtil.setnx(LOCKKEY,LOCKKEY);
+        if (rs){
+            //写业务代码，一人我饮酒醉
+        }
         //解锁
         RedisUtil.del(LOCKKEY);
 
