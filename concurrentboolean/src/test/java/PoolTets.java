@@ -12,11 +12,14 @@ public class PoolTets {
 
     @Test
     public void test(){
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+            pool.execute(new Thread());
+        }
 
     }
 
     private static ThreadFactory namedThreadFactory = new ThreadFactoryBuilder()
-            .setNameFormat("demo-poolchen-%d").build();
+            .setNameFormat("demo-$$$$$$$$$$-%d").build();
 
     private static ExecutorService pool = new ThreadPoolExecutor(5, 200,
             0L, TimeUnit.MILLISECONDS,
@@ -27,5 +30,7 @@ public class PoolTets {
         for (int i = 0; i < Integer.MAX_VALUE; i++) {
             pool.execute(new Thread());
         }
+
+        System.out.println("sss");
     }
 }
