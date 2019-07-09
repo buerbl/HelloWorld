@@ -1,3 +1,4 @@
+
 ## 引入依赖
 ```gradle
  compile 'org.springframework.boot:spring-boot-starter-data-redis'
@@ -252,4 +253,29 @@ public class RedisHello {
 
 ## 源码
 https://github.com/blackdogss/HelloWorld/tree/master/helloRS
+## 深入
 
+### 背景
+互联网公司大部分通常使用myslq作为数据库存储数据，但是mysql存数据是以影响IO为代价的，所以mysql是系统的常见瓶颈，为解决这个问题，redis这种非关系型数据库就出现了，存在即合理。redis喜欢在内存操作，比mysql在磁盘瞎忙高效多了，因此深受人们喜爱。
+
+### 数据结构
+redis有五种数据结构
+
+1.String 字符串
+
+2.Hash哈希
+
+3.List列表
+
+4.Set集合
+
+5.Sorted Set
+
+最常用的就是String类型，通常使用它做缓存，减轻直接访问数据库的压力。Hash的话可以用来做用户id，List可以用来做粉丝列表，Set的话可以做共同好友，Sorted Set可以做排行榜。
+
+### 分布式锁
+redis处理上面列举的例子，还有就是可以做分布式锁，在分布式系统中，接口面临的是多进程多线程访问，如果依赖java的锁是不能解决问题的，因为进程之间不共享内存；利用数据库加锁又显得笨重，因此还得用redis来加锁。redis怎么加锁，主要还是利用setnx命令，该命令作用是如果key存在就不执行操作，不存在的话就设置value，这种特性就是为锁打造的啊。
+
+## 公众号
+
+![ZsN974.jpg](https://s2.ax1x.com/2019/07/08/ZsN974.jpg)
