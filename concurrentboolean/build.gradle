@@ -15,6 +15,5 @@ repositories {
 
 dependencies {
     compile project(':base')
-  
-
+    compile 'com.google.guava:guava:27.0.1-jre'
 }
