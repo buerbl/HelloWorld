@@ -12,5 +12,13 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2019-07-07
  */
 public interface IUserService extends IService<User> {
+    /**
+     * 计数器
+     */
+    void test();
 
+    /**
+     * 缓存
+     */
+    void  get();
 }
