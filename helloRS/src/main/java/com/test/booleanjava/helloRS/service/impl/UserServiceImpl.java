@@ -64,8 +64,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public boolean insertLeaderboard() {
         Double score = getScore(100l, 1000l);
-        redisTemplate.opsForZSet().add("leaderboard", "1", score);
-        return false;
+        return redisTemplate.opsForZSet().add("leaderboard", "1", score);
     }
 
     @Override

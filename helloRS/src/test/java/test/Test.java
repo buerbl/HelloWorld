@@ -25,6 +25,16 @@ public class Test {
 
     }
 
+    @org.junit.Test
+    public void test2(){
+        userService.insertLeaderboard();
+    }
+
+    @org.junit.Test
+    public  void test3(){
+        userService.checkLeaderboard();
+    }
+
 
     @org.junit.Test
     public void test1(){
