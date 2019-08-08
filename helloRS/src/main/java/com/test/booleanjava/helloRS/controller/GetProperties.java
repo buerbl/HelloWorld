@@ -27,6 +27,7 @@ public class GetProperties {
         Assert.notNull(ss,"b不能为空");
 
 
+        //TODO DFSDFF
         LogUtil.info("sdasad的值：[{}]", sdasad);
         LogUtil.info("ss：[{}]", ss);
         return "hello, redis"+sdasad+"和"+ss;

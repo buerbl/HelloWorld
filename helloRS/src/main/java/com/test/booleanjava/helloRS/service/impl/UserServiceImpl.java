@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -49,7 +50,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public void get() {
         User user = new User();
-        user.setName("陈文观");
+        user.setName("陈**");
         Gson gson = new Gson();
         String toJson = gson.toJson(user);
         redisTemplate.opsForValue().set("name", toJson);
@@ -59,4 +60,34 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
 
     }
+
+    @Override
+    public boolean insertLeaderboard() {
+        Double score = getScore(100l, 1000l);
+        redisTemplate.opsForZSet().add("leaderboard", "1", score);
+        return false;
+    }
+
+    @Override
+    public Set checkLeaderboard() {
+        // 0 -1 表示返回所有的value的set值
+        return redisTemplate.opsForZSet().range("leaderboard", 0, -1);
+    }
+
+    private Double getScore( Long oneDayGoldBean, Long useTime) {
+        String value1 = String.valueOf(oneDayGoldBean/1.0);
+        long todayEndSS = getTodayEndSS(useTime);
+        String value2 = String.valueOf(todayEndSS);
+        String score =value1+value2;
+        return -Double.valueOf(score);
+    }
+
+    private long getTodayEndSS(long current){
+        //今天零点零分零秒的毫秒数
+        long zero = 0L;
+        //今天23点59分59秒的毫秒数
+        long twelve = zero + 24 * 60 * 60 * 1000;
+        return (twelve - current) / 1000;
+    }
+
 }
