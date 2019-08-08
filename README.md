@@ -5,6 +5,8 @@
 
 [redis整合springboot的helloworld](https://github.com/blackdogss/HelloWorld/blob/master/MD/redis整合springboot的helloworld.md)
 
+[redis实现排行榜](https://github.com/blackdogss/HelloWorld/blob/master/MD/redis实现排行榜.md)
+
 
 
 ## 公众号
