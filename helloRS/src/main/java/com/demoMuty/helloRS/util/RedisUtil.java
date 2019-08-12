@@ -1,4 +1,4 @@
-package com.test.booleanjava.helloRS.util;
+package com.demoMuty.helloRS.util;
 
 import redis.clients.jedis.Jedis;
 

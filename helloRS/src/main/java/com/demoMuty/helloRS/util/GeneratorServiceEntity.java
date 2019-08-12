@@ -1,4 +1,4 @@
-package com.test.booleanjava.helloRS.util;
+package com.demoMuty.helloRS.util;
 
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.generator.AutoGenerator;

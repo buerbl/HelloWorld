@@ -1,4 +1,4 @@
-package com.test.booleanjava.helloRS.util;
+package com.demoMuty.helloRS.util;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -31,8 +31,8 @@ public class LogUtil {
             project = props.getProperty("project");
             // 处理server字段
             server = props.getProperty("server");
-            if (com.test.booleanjava.helloRS.util.CommonUtil.isNull(server)) {
-                String serverip = com.test.booleanjava.helloRS.util.CommonUtil.getLocalIP();
+            if (CommonUtil.isNull(server)) {
+                String serverip = CommonUtil.getLocalIP();
                 String[] iptemps = serverip.split("\\.");
                 server = iptemps[2] + "_" + iptemps[3];
                 props.setProperty("server", server);
@@ -54,7 +54,7 @@ public class LogUtil {
     private static Properties loadProperties() {
         Properties props = new Properties();
         // log4j.properties
-        URL resoucePath = com.test.booleanjava.helloRS.util.PropertiesLoader.class.getClassLoader().getResource(
+        URL resoucePath = PropertiesLoader.class.getClassLoader().getResource(
                 "log4j.properties");
         File file = new File(resoucePath.getPath());
         InputStream in = null;
@@ -74,7 +74,7 @@ public class LogUtil {
         }
         // statcollection.properties
         Properties props_stat = new Properties();
-        resoucePath = com.test.booleanjava.helloRS.util.PropertiesLoader.class.getClassLoader().getResource(
+        resoucePath = PropertiesLoader.class.getClassLoader().getResource(
                 "flumelog.properties");
         if (resoucePath != null) {
             isflumelog=true;
@@ -127,7 +127,7 @@ public class LogUtil {
         Logger logger = Logger.getLogger(LOGGER_FAIL);
         if(isflumelog){
             String logmessage = "message:" + e.getMessage() + " "
-                    + com.test.booleanjava.helloRS.util.CommonUtil.getExceptionStackStr(e);
+                    + CommonUtil.getExceptionStackStr(e);
             // logger.error(logmessage);
             logger.log(FQCN, Level.ERROR, logmessage, null);
         }else {
@@ -163,7 +163,7 @@ public class LogUtil {
         Logger logger = Logger.getLogger(LOGGER_DEBUG);
         if(isflumelog){
             String logmessage = "message:" + message + " "
-                    + com.test.booleanjava.helloRS.util.CommonUtil.getExceptionStackStr(e);
+                    + CommonUtil.getExceptionStackStr(e);
             logger.debug(logmessage);
         }else {
             logger.debug(message, e);

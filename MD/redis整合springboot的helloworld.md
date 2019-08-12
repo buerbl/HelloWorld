@@ -147,10 +147,10 @@ public class Redisplus {
 package com.test.booleanjava.helloRS.controller;
 
 
-import com.test.booleanjava.helloRS.entity.User;
-import com.test.booleanjava.helloRS.util.Redisplus;
-import com.test.booleanjava.helloRS.service.IUserService;
-import com.test.booleanjava.helloRS.util.RedisUtil;
+import User;
+import Redisplus;
+import IUserService;
+import RedisUtil;
 import com.test.base.core.util.LogUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

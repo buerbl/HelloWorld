@@ -1,10 +1,10 @@
-package com.test.booleanjava.helloRS.controller;
+package com.demoMuty.helloRS.controller;
 
 
-import com.test.booleanjava.helloRS.entity.User;
-import com.test.booleanjava.helloRS.util.Redisplus;
-import com.test.booleanjava.helloRS.service.IUserService;
-import com.test.booleanjava.helloRS.util.RedisUtil;
+import com.demoMuty.helloRS.entity.User;
+import com.demoMuty.helloRS.service.IUserService;
+import com.demoMuty.helloRS.util.RedisUtil;
+import com.demoMuty.helloRS.util.Redisplus;
 import com.test.base.core.util.LogUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,10 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 /**
@@ -26,7 +28,7 @@ import java.util.Date;
  * description:
  */
 @RestController
-@RequestMapping("/helloRS/redisHello")
+@RequestMapping("/redisHello")
 public class RedisHello {
     private final static Logger logger = LoggerFactory.getLogger(RedisHello.class);
 
@@ -47,7 +49,7 @@ public class RedisHello {
     @RequestMapping("/hello")
     public String  hello(){
         String a = null;
-        Assert.notNull(a, "b不能为空");
+//        Assert.notNull(a, "b不能为空");
 
 
         LogUtil.info("redis的展示：[{}]", redisTemplate);
@@ -112,5 +114,32 @@ public class RedisHello {
         return "hello, lock一下redis";
     }
 
+    @RequestMapping("/ip")
+    public String ip(String name){
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        System.out.println(name);
+        HttpServletRequest request = attributes.getRequest();
+        return getIpAddr(request);
+    }
+
+    private   String getIpAddr(HttpServletRequest request) {
+        String ip = request.getHeader("x-forwarded-for");
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("Proxy-Client-IP");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("WL-Proxy-Client-IP");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("HTTP_CLIENT_IP");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("HTTP_X_FORWARDED_FOR");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getRemoteAddr();
+        }
+        return ip;
+    }
 
 }

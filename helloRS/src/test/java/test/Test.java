@@ -1,7 +1,7 @@
 package test;
 
-import com.test.booleanjava.Application;
-import com.test.booleanjava.helloRS.service.IUserService;
+import com.demoMuty.Application;
+import com.demoMuty.helloRS.service.IUserService;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

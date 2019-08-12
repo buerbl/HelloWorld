@@ -1,6 +1,6 @@
-package com.test.booleanjava.helloRS.service;
+package com.demoMuty.helloRS.service;
 
-import com.test.booleanjava.helloRS.entity.User;
+import com.demoMuty.helloRS.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.Set;

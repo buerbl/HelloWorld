@@ -1,11 +1,11 @@
-package com.test.booleanjava.helloRS.service.impl;
+package com.demoMuty.helloRS.service.impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.google.gson.Gson;
-import com.test.booleanjava.helloRS.entity.User;
-import com.test.booleanjava.helloRS.mapper.UserMapper;
-import com.test.booleanjava.helloRS.service.IUserService;
+import com.demoMuty.helloRS.entity.User;
+import com.demoMuty.helloRS.mapper.UserMapper;
+import com.demoMuty.helloRS.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;

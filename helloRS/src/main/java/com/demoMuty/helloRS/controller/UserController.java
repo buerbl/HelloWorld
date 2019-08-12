@@ -1,4 +1,4 @@
-package com.test.booleanjava.helloRS.controller;
+package com.demoMuty.helloRS.controller;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;

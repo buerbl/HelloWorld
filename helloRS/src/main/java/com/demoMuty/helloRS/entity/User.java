@@ -1,4 +1,4 @@
-package com.test.booleanjava.helloRS.entity;
+package com.demoMuty.helloRS.entity;
 
 import java.io.Serializable;
 import lombok.Data;

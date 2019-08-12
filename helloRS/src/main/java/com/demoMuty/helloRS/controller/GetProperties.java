@@ -1,4 +1,4 @@
-package com.test.booleanjava.helloRS.controller;
+package com.demoMuty.helloRS.controller;
 
 import com.test.base.core.util.LogUtil;
 import org.springframework.beans.factory.annotation.Value;

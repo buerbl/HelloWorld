@@ -1,4 +1,4 @@
-package com.test.booleanjava.helloRS.util;
+package com.demoMuty.helloRS.util;
 
 import org.apache.commons.io.IOUtils;
 

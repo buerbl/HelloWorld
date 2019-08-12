@@ -1,7 +1,7 @@
-package com.test.booleanjava.helloRS.mapper;
+package com.demoMuty.helloRS.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.test.booleanjava.helloRS.entity.User;
+import com.demoMuty.helloRS.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

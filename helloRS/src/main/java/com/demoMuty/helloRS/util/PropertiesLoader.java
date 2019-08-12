@@ -1,4 +1,4 @@
-package com.test.booleanjava.helloRS.util;
+package com.demoMuty.helloRS.util;
 
 import java.io.File;
 import java.io.FileInputStream;
