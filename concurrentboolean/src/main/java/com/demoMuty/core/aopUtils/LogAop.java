@@ -1,12 +1,17 @@
 package com.demoMuty.core.aopUtils;
 
 import com.demoMuty.core.entity.DTO;
+import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Field;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * 打日记的切面
@@ -19,29 +24,32 @@ public class LogAop {
     public void method(){
     }
 
-    @Around("method()")
-    public Object  before(ProceedingJoinPoint point){
-        Object[] args = point.getArgs();
-        args.getClass().getName();
-        Field[] fieldInfo = args.getClass().getDeclaredFields();
-        for (int i = 0; i < fieldInfo.length; i ++) {
-            fieldInfo[i].setAccessible(true); //成员变量为private,故必须进行此操
-            log.info("fiels的值[{}]", fieldInfo[i]);
-        }
+    @Before("method()")
+    public void   before(JoinPoint point) {
+        Object[] arg = point.getArgs();
+        log.info("arg的字段值：[{}]", Arrays.toString(arg));
         log.info("before的值[{}]", System.currentTimeMillis());
-//        args[0] ="2";
-//        DTO dto = args;
-        for (int i = 0; i < args.length; i++) {
-            log.info("参数[{}]", args[i]);
-            log.info("名称[{}]", point.getTarget());
+        log.info("arg的值[{}]", arg[0]);
+        Field[] declaredFields = arg[0].getClass().getDeclaredFields();
+        log.info("字段值：[{}]", Arrays.toString(declaredFields));
+        for (int i = 0; i < declaredFields.length; i++) {
+            declaredFields[i].setAccessible(true);
+            String name1 = declaredFields[i].getName();
+            log.info("获取的参数[{}]" ,name1);
+            try {
+                Object name = declaredFields[i].get(arg[0]);
+                log.info("获取的参数值[{}]" ,name);
+                declaredFields[i].set(arg[0], "1");
+                Object o = declaredFields[i].get(arg[0]);
+                log.info("获取修改后的参数值[{}]" ,o);
+
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+
         }
-        try {
-            point.proceed(args);
-//            args[0] = "change";
-        } catch (Throwable throwable) {
-            throwable.printStackTrace();
-        }
-        return args[0].toString();
+
+
     }
 
     @After("method()")

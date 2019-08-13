@@ -22,4 +22,10 @@ public class ConcurrentController {
         log.info("hello,concurrentController");
         return "hello,concurrentController";
     }
+
+    @RequestMapping("/test")
+    public void test(){
+        log.info("test");
+    }
+
 }
