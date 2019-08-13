@@ -1,4 +1,4 @@
-package com.test.concurrentboolean.core;
+package com.demoMuty.core;
 
 /**
  * @author boolean

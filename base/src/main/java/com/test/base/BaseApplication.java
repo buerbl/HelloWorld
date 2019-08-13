@@ -9,8 +9,8 @@ import org.springframework.context.annotation.ComponentScan;
  * Date: 2019/7/4 9:46
  * description:
  */
-@ComponentScan(basePackages = "com.test.base.core")
-@SpringBootApplication
-public class BaseApplication extends SpringBootServletInitializer {
-
-}
+//@ComponentScan(basePackages = "com.test.base.core")
+//@SpringBootApplication
+//public class BaseApplication extends SpringBootServletInitializer {
+//
+//}
