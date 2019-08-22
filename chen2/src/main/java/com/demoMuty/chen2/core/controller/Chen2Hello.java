@@ -1,4 +1,4 @@
-package com.test.chen2.core.controller;
+package com.demoMuty.chen2.core.controller;
 
 import com.test.base.core.provider.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
