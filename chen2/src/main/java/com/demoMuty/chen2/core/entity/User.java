@@ -1,8 +1,8 @@
-package com.demoMuty.helloRS.entity;
+package com.demoMuty.chen2.core.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -15,8 +15,8 @@ import java.io.Serializable;
  * @since 2019-07-07
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class User implements Serializable {
 
 private static final long serialVersionUID=1L;

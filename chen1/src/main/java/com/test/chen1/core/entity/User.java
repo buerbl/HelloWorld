@@ -1,10 +1,12 @@
-package com.demoMuty.helloRS.entity;
-
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
+package com.test.chen1.core.entity;
 
 import java.io.Serializable;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
@@ -15,8 +17,8 @@ import java.io.Serializable;
  * @since 2019-07-07
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class User implements Serializable {
 
 private static final long serialVersionUID=1L;

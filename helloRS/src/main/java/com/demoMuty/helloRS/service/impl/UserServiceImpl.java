@@ -2,10 +2,10 @@ package com.demoMuty.helloRS.service.impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.google.gson.Gson;
 import com.demoMuty.helloRS.entity.User;
 import com.demoMuty.helloRS.mapper.UserMapper;
 import com.demoMuty.helloRS.service.IUserService;
+import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -28,7 +28,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
     @Autowired
     private StringRedisTemplate redisTemplate;
-    @Override
     public void test(){
         log.info("sssss");
         log.info(String.valueOf(redisTemplate));
@@ -37,7 +36,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             Long qww1 = redisTemplate.opsForValue().increment("QWW", 1);
             log.info("值为:[{}]", qww1);
             if (qww1 > 10){
-                 throw new RuntimeException("限制");
+                throw new RuntimeException("限制");
             }
 
         }else {
