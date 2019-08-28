@@ -29,19 +29,19 @@ public class aspect {
     @Pointcut("execution (* com.demoMuty.helloRS.controller.*.*(..))")
     private void method(){}
 
-    @Around("method()")
-    public void befor( JoinPoint joinPoint) throws Exception{
-        Object[] paramValues = joinPoint.getArgs();
-        String[] paramNames = ((CodeSignature) joinPoint
-                .getSignature()).getParameterNames();
-
-        for(int i=0;i<paramNames.length;i++){
-            System.out.println(paramNames[i]+","+paramValues[i]);
-            paramValues[i] = "13";
-        }
-
-
-    }
+//    @Around("method()")
+//    public void befor( JoinPoint joinPoint) throws Exception{
+//        Object[] paramValues = joinPoint.getArgs();
+//        String[] paramNames = ((CodeSignature) joinPoint
+//                .getSignature()).getParameterNames();
+//
+//        for(int i=0;i<paramNames.length;i++){
+//            System.out.println(paramNames[i]+","+paramValues[i]);
+//            paramValues[i] = "13";
+//        }
+//
+//
+//    }
 //
 //    @AfterReturning("method()")
 //    public void after(){

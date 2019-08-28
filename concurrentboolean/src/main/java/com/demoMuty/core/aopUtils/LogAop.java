@@ -42,11 +42,9 @@ public class LogAop {
                 declaredFields[i].set(arg[0], "1");
                 Object o = declaredFields[i].get(arg[0]);
                 log.info("获取修改后的参数值[{}]" ,o);
-
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
-
         }
 
 
