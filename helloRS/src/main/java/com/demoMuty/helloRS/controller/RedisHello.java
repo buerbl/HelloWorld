@@ -49,6 +49,9 @@ public class RedisHello {
     @RequestMapping("/hello")
     public String  hello(){
         String a = null;
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        attributes.getRequest().getParameter("chen");
+
 //        Assert.notNull(a, "b不能为空");
 
 
