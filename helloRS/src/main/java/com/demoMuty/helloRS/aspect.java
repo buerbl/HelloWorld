@@ -23,12 +23,12 @@ import java.util.Map;
 public class aspect {
     private Long startTime;
 
-//    /**
-//     * public <E> List<E> selectList(String statement, Object parameter, RowBounds rowBounds) {
-//     */
-//    @Pointcut("execution (* com.demoMuty.helloRS.controller.*.*(..))")
-//    private void method(){}
-//
+    /**
+     * public <E> List<E> selectList(String statement, Object parameter, RowBounds rowBounds) {
+     */
+    @Pointcut("execution (* com.demoMuty.helloRS.controller.*.*(..))")
+    private void method(){}
+
 //    @Around("method()")
 //    public void befor( JoinPoint joinPoint) throws Exception{
 //        Object[] paramValues = joinPoint.getArgs();
@@ -39,6 +39,16 @@ public class aspect {
 //            System.out.println(paramNames[i]+","+paramValues[i]);
 //            paramValues[i] = "13";
 //        }
+//
+//
+//    }
+//
+//    @AfterReturning("method()")
+//    public void after(){
+////        Long endTime = System.currentTimeMillis();
+////        Long costTime = endTime - startTime;
+////        System.out.println("point_1:"+costTime+"");
+//        log.info("后的调用");
 //    }
 
 
